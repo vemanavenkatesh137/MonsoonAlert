@@ -1,0 +1,25 @@
+{
+  "name": "monsoon-resilience-engine",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "tests"
+  ],
+  "scripts": {
+    "db:up": "docker-compose up -d",
+    "db:down": "docker-compose down",
+    "backend:dev": "npm run dev --workspace=backend",
+    "frontend:dev": "npm run dev --workspace=frontend",
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "ingest": "npm run ingest --workspace=backend",
+    "test:unit": "npm run test --workspace=tests",
+    "test:evals": "npm run test:evals --workspace=tests",
+    "test:e2e": "npm run test:e2e --workspace=tests",
+    "install:all": "npm install && npm install --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "monsoon-resilience-tests",
+  "version": "1.0.0",
+  "description": "Verification suite: Vitest unit tests, LLM safety evals, Playwright integration tests",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run unit/",
+    "test:evals": "vitest run --test-timeout=15000 evals/",
+    "test:e2e": "playwright test e2e/"
+  },
+  "dependencies": {
+    "@fastify/jwt": "^8.0.1",
+    "openai": "^4.33.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3",
+    "vitest": "^1.3.1"
+  }
+}

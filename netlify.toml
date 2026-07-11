@@ -1,0 +1,9 @@
+[build]
+  publish = "frontend/dist"
+  command = "npm run build --workspace=frontend"
+
+# SPA redirection rewrite rule
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

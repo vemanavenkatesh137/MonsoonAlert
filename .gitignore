@@ -1,0 +1,21 @@
+# Environment Configuration
+.env
+
+# Dependencies
+node_modules/
+
+# Production Builds
+dist/
+build/
+
+# IDE and System Files
+.DS_Store
+.vscode/
+.idea/
+.gemini/
+
+# Test Reports and Artifacts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
