@@ -1,6 +1,7 @@
 {
   "name": "monsoon-resilience-backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "Fastify backend for the Dynamic GenAI Monsoon Resilience & Citizen Assistance Engine",
   "main": "dist/index.js",
   "scripts": {

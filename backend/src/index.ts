@@ -63,7 +63,7 @@ const start = async () => {
 
   // 6. Secured Emergency assistance endpoints
   fastify.post('/api/assistance/rescue', { preHandler: [fastify.verifyAuth] }, async (request, reply) => {
-    fastify.log.info('Emergency Rescue Request received:', request.body);
+    fastify.log.info({ body: request.body }, 'Emergency Rescue Request received');
     return reply.send({
       success: true,
       message: 'CRITICAL: Rescue request submitted to control room. Local cell tower telemetry logged. Keep phone charged.',
@@ -71,7 +71,7 @@ const start = async () => {
   });
 
   fastify.post('/api/assistance/report-waterlog', { preHandler: [fastify.verifyAuth] }, async (request, reply) => {
-    fastify.log.info('Waterlogging report logged:', request.body);
+    fastify.log.info({ body: request.body }, 'Waterlogging report logged');
     return reply.send({
       success: true,
       message: 'Report logged. Municipal drainage maintenance teams have been notified of this grid location.',
@@ -79,7 +79,7 @@ const start = async () => {
   });
 
   fastify.post('/api/assistance/claim', { preHandler: [fastify.verifyAuth] }, async (request, reply) => {
-    fastify.log.info('Damage claim received:', request.body);
+    fastify.log.info({ body: request.body }, 'Damage claim received');
     return reply.send({
       success: true,
       message: 'Disaster assessment claim registered. Inspection team schedule queued.',
