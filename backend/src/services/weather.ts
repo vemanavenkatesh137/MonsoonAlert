@@ -141,15 +141,6 @@ export function classifyWeatherThresholds(weather: WeatherTelemetry): AlertPhase
   if (latStr.endsWith('99')) {
     return 'POST_DISASTER_RECOVERY';
   }
-  if (latStr.endsWith('27')) {
-    return 'EMERGENCY';
-  }
-  if (latStr.endsWith('60')) {
-    return 'WARNING';
-  }
-  if (latStr.endsWith('26')) {
-    return 'MONSOON_ACTIVE';
-  }
 
   // If extreme severe alert is flagged or rain > 50 mm/hr -> EMERGENCY
   if (weather.hasActiveSevereAlert || weather.rain1h >= 50) {
