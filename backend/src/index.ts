@@ -56,6 +56,16 @@ const start = async () => {
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   });
 
+  // Root health-check endpoint
+  fastify.get('/', async (request, reply) => {
+    return reply.send({
+      status: 'online',
+      service: 'Monsoon Resilience API Gateway',
+      version: '1.0.0',
+      timestamp: new Date().toISOString(),
+    });
+  });
+
   // 5. Register routers
   await fastify.register(authRoutes);
   await fastify.register(layoutRoutes);
